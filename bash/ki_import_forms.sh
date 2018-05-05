@@ -146,6 +146,6 @@ rm result-upload.html
 #-----------------
 printf "${YELLOW}Step 7:${NC} Cleaning up..."
 rm $COOKIE_JAR
-rm $UPLOADFILE
+#rm $UPLOADFILE
 printf " [${GREEN}OK${NC}]\n"
 

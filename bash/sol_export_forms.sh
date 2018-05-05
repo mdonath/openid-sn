@@ -17,6 +17,7 @@ OPENIDURL=https://login.scouting.nl/user/$USERNAME
 COOKIE_JAR=cookies
 
 OPTIONS_CURL="--show-error --silent --location --user-agent 'Mozilla/5.0' --cookie $COOKIE_JAR --cookie-jar $COOKIE_JAR"
+#OPTIONS_CURL="--show-error --verbose --location --user-agent 'Mozilla/5.0' --cookie $COOKIE_JAR --cookie-jar $COOKIE_JAR"
 OPTIONS_TIDY="-indent -wrap -quiet -asxml -numeric -file /dev/null"
 OPTIONS_XML="sel --text --template"
 
@@ -35,8 +36,8 @@ ASSOC_HANDLE=`cat "step1.out" | xmlstarlet $OPTIONS_XML --match "//_:form//_:inp
 
 rm step1.out
 printf " [${GREEN}OK${NC}]\n"
-#echo "- Login-token :  $TOKEN"
-#echo "- assoc_handle: $ASSOC_HANDLE"
+echo "- Login-token :  $TOKEN"
+echo "- assoc_handle: $ASSOC_HANDLE"
 
 
 printf "${YELLOW}Step 2:${NC} Logging on $USERNAME at login.scouting.nl..."
@@ -56,7 +57,7 @@ curl \
  --data-binary "password=$PASSWORD" \
  --data "form_action=Inloggen" \
  --output "/dev/null" \
- --url "https://login.scouting.nl/provider/authenticate"
+ --url "https://login.scouting.nl/provider/authenticate/"
 printf " [${GREEN}OK${NC}]\n"
 
 
@@ -81,6 +82,6 @@ printf " [${GREEN}OK${NC}]\n"
 
 
 printf "${YELLOW}Step 5:${NC} Cleaning up..."
-rm $COOKIE_JAR
+#rm $COOKIE_JAR
 printf " [${GREEN}OK${NC}]\n"
 
