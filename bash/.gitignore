@@ -1,5 +1,4 @@
-do_update.sh
-download_all.sh
-log.txt
+CREDENTIALS
+log*.txt
 nohup.out
-
+*.csv
