@@ -35,7 +35,7 @@ curl \
 TOKEN=`cat "step1.out" | xmlstarlet $OPTIONS_XML --match "//_:form//_:input[@name='token']/@value" --value-of "."`
 ASSOC_HANDLE=`cat "step1.out" | xmlstarlet $OPTIONS_XML --match "//_:form//_:input[@name='openid.assoc_handle']/@value" --value-of "."`
 
-rm step1.out
+#rm step1.out
 printf " [${GREEN}OK${NC}]\n"
 
 
