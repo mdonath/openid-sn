@@ -10,7 +10,10 @@ FORM_ID=$1
 USERNAME=$2
 PASSWORD=$3
 
-PARTICIPANT_STATUS="&prt_st_id[]=1000"
+# 1000 - Deelnemer staat ingeschreven
+# 1008 - Op wachtlijst
+# 1020 - Ingeschreven, moet nog iDEAL-betaling
+PARTICIPANT_STATUS="&prt_st_id[]=1000,1020,1008"
 
 
 YELLOW='\033[1;33m'

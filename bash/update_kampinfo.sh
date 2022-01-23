@@ -12,4 +12,6 @@ HIT_YEAR=$4
 ./toon_totaal.sh ${EVENT_ID}_formulieren.csv
 
 # upload csv naar KampInfo
+
+#echo "SKIPPING UPLOAD NAAR KAMPINFO !!!"
 ./ki_import_forms.sh ${EVENT_ID}_formulieren.csv ${HIT_YEAR} ${USERNAME} ${PASSWORD}

@@ -138,7 +138,7 @@ curl \
 printf " [${GREEN}OK${NC}]\n"
 
 cat result-upload.html | grep "kampen gewijzigd met hun inschrijvingen"
-rm result-upload.html
+#rm result-upload.html
 
 
 #-----------------
