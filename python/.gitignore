@@ -1,0 +1,4 @@
+credentials.yaml
+log*.txt
+nohup.out
+*.csv
