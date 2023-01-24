@@ -2,3 +2,5 @@ credentials.yaml
 log*.txt
 nohup.out
 *.csv
+**/__pycache__/
+hit-20??/
