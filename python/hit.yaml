@@ -1,4 +1,4 @@
-current_year: 2023
+current_year: 2024
 hits:
   - year: 2022
     event_id: 26172
@@ -20,3 +20,14 @@ hits:
       - 1000 # Deelnemer staat ingeschreven
       - 1020 # Ingeschreven, moet nog iDEAL-betaling
       - 1008 # Op wachtlijst
+  - year: 2024
+    event_id: 30803
+    forms:
+      - 53336
+      - 53339
+      - 53342
+    participant_status:
+      - 1000 # Deelnemer staat ingeschreven
+      - 1020 # Ingeschreven, moet nog iDEAL-betaling
+      - 1008 # Op wachtlijst
+
