@@ -42,7 +42,8 @@ class SolStepper(Stepper):
         contents = BeautifulSoup(response.content, "html.parser")
         inputs = {n['name']: (n['value'] if n.has_attr('value') else None)
                   for n in contents.find_all('input')}
-        csrf_token = inputs['_csrf_token']
+
+        csrf_token = inputs['login[_csrf_token]']
         self.end_step(self.check_title(
             contents, 'Inloggen bij Scouting Nederland') and len(csrf_token) > 0)
         return csrf_token
@@ -55,9 +56,10 @@ class SolStepper(Stepper):
             f"Logging on {credentials['sol']['username']} at login.scouting.nl")
 
         response = self.session.post("https://login.scouting.nl/provider/authenticate", data={
-            'username': credentials['sol']['username'],
-            'password': credentials['sol']['password'],
-            '_csrf_token': csrf_token,
+            'login[username]': credentials['sol']['username'],
+            'login[password]': credentials['sol']['password'],
+            'login[_csrf_token]': csrf_token,
+            'login[email_repeat]': '',
         })
         contents = BeautifulSoup(response.content, "html.parser")
 
