@@ -16,9 +16,10 @@ if __name__ == "__main__":
     down.download_inschrijvingen()
     down.clean_up()
 
-    # uoload naar KampInfo
+    # upload naar KampInfo
     up = UploadDeelnemersAantallen(hit_config)
     special_value = up.set_up(credentials)
     up.upload()
     up.logout(special_value)
     up.clean_up()
+
