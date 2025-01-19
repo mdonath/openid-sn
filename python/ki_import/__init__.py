@@ -67,10 +67,11 @@ class UploadDeelnemersAantallen(Stepper):
 
         # upload file
         self.next_step("Uploading file")
-        input_dir = 'hit-2023/'
-        file_name = '28405_formulieren.csv'
+        event_id = self.hit['event_id']
+        input_dir = f'hit-{self.hit_config["current_year"]}/'
+        file_name = f'{event_id}_formulieren.csv'
         if not os.path.exists(input_dir+file_name):
-            raise Exception("Bestand kan niet gevonden worden")
+            raise Exception(f"Bestand kan niet gevonden worden: {file_name}")
 
         response = self.session.post(
             "https://hit.scouting.nl/administrator/index.php",
